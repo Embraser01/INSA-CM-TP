@@ -2,7 +2,7 @@ function [ niveaudegris ] = Exporter16( terrain , filename)
 %UNTITLED3 Summary of this function goes here
 %   Detailed explanation goes here
     n = size(terrain);
-    niveaudegris = zeros(n(1), n(2), 3);
+    niveaudegris = zeros(n(1), n(2));
     min= terrain(1,1);
     max= terrain(1,1);
     for i=1:n(1),
@@ -19,9 +19,7 @@ function [ niveaudegris ] = Exporter16( terrain , filename)
     
     for i=1:n(1),
         for j =1:n(2),
-            niveaudegris(i,j, 1) = (terrain(i,j)- min ) * (65535/(max-min));
-            niveaudegris(i,j, 2) = (terrain(i,j)- min ) * (65535/(max-min));
-            niveaudegris(i,j, 3) = (terrain(i,j)- min ) * (65535/(max-min));
+            niveaudegris(i,j) = (terrain(i,j)- min ) * (65535/(max-min));
         end
     end
     

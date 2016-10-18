@@ -1,8 +1,7 @@
-function [ texture ] = CourbeNiveau( terrain, filename )
+function [ texture ] = CourbeNiveau( terrain, pas , filename )
 %Genere une courbe d eniveau a partir des altitudes
 %   Detailed explanation goes here
 n = size(terrain);
-pas = 25;
 epsNoir =1.25;
 epsGris = 2;
 texture = ones(n(1),n(2),3);
@@ -24,6 +23,8 @@ texture = texture * 240;
     
     texture = uint8(texture);
     
-    imwrite(texture,filename);
+    if exist('filename','var')
+        imwrite(texture,filename);
+    end
 
 end

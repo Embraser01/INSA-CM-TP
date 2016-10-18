@@ -5,7 +5,7 @@ function [ ] = SecondRendu(terrain ,iter, alpha, lambda)
 terrainFinal = GenererTerrain(terrain,iter,alpha,lambda);
 
 Exporter16(terrainFinal, 'niveaudegris.png');
-CourbeNiveau(terrainFinal, 'courbeniveau.png');
+CourbeNiveau(terrainFinal, 25 , 'courbeniveau.png');
 RenderTerrain('niveaudegris.png','courbeniveau.png','out.png', [-1200 0 700], [400 0 100]);
 
 end
