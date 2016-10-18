@@ -1,8 +1,8 @@
-function [ niveaudegris ] = Exporter16( terrain )
+function [ niveaudegris ] = Exporter16( terrain , filename)
 %UNTITLED3 Summary of this function goes here
 %   Detailed explanation goes here
     n = size(terrain);
-    niveaudegris = zeros(n);
+    niveaudegris = zeros(n(1), n(2), 3);
     min= terrain(1,1);
     max= terrain(1,1);
     for i=1:n(1),
@@ -19,7 +19,12 @@ function [ niveaudegris ] = Exporter16( terrain )
     
     for i=1:n(1),
         for j =1:n(2),
-            niveaudegris(i,j) = (terrain(i,j)- min ) * (65535/max);
+            niveaudegris(i,j, 1) = (terrain(i,j)- min ) * (65535/(max-min));
+            niveaudegris(i,j, 2) = (terrain(i,j)- min ) * (65535/(max-min));
+            niveaudegris(i,j, 3) = (terrain(i,j)- min ) * (65535/(max-min));
         end
     end
+    
+    niveaudegris = uint16(niveaudegris);
+    imwrite(niveaudegris, filename);
 end
