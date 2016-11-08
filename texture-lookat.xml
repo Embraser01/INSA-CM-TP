@@ -37,9 +37,9 @@
 
 		<film type="ldrfilm">
 			<boolean name="banner" value="false"/>
-			<integer name="height" value="300"/>
+			<integer name="height" value="600"/>
 			<string name="pixelFormat" value="rgb"/>
-			<integer name="width" value="512"/>
+			<integer name="width" value="1024"/>
 
 			<rfilter type="gaussian"/>
 		</film>
