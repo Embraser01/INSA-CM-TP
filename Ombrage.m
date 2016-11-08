@@ -28,6 +28,11 @@ for i=1:n(1),
     end
 end
 
+% Rivières
+
+texture = ConstruitRiviere(terrain,n,texture, 4);
+texture = ConstruitRiviere(terrain,n,texture, 3);
+
 % Calcul l'ombre
 for i = 1 : n(1),
    for j = 1: n(2),
