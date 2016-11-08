@@ -20,12 +20,12 @@ function [ matrice ] = MatriceParam( origine, cible )
     %premiere direction u :
     u = cross([0 0 1],w);
     u = u/abs(norm(u));
-    matrice (1,4) = u(1);
-    matrice (2,4) = u(2);
-    matrice (3,4) = u(3);
+    matrice (1,1) = u(1);
+    matrice (2,1) = u(2);
+    matrice (3,1) = u(3);
     %deuxieme direction v:
     v = cross(w,u);
-    matrice (1,4) = v(1);
-    matrice (2,4) = v(2);
-    matrice (3,4) = v(3);
+    matrice (1,2) = v(1);
+    matrice (2,2) = v(2);
+    matrice (3,2) = v(3);
 end
